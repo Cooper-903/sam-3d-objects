@@ -1,1 +1,5 @@
 __pycache__
+pytorch3d/
+*.log
+*.ply
+notebook/.gradio/

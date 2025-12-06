@@ -1,0 +1,122 @@
+/home/ubuntu/miniconda3/envs/sam3d-objects/lib/python3.11/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/home/ubuntu/miniconda3/envs/sam3d-objects/lib/python3.11/site-packages/torch/cuda/__init__.py:235: UserWarning: 
+NVIDIA GeForce RTX 5090 with CUDA capability sm_120 is not compatible with the current PyTorch installation.
+The current PyTorch install supports CUDA capabilities sm_50 sm_60 sm_70 sm_75 sm_80 sm_86 sm_90.
+If you want to use the NVIDIA GeForce RTX 5090 GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/
+
+  warnings.warn(
+2025-12-02 19:16:24.031 | INFO     | sam3d_objects.pipeline.inference_pipeline:set_attention_backend:15 - GPU name is NVIDIA GeForce RTX 5090
+2025-12-02 19:16:24.790 | INFO     | sam3d_objects.model.backbone.tdfy_dit.modules.sparse:__from_env:39 - [SPARSE] Backend: spconv, Attention: sdpa
+2025-12-02 19:16:26.801 | INFO     | sam3d_objects.model.backbone.tdfy_dit.modules.attention:__from_env:30 - [ATTENTION] Using backend: sdpa
+2025-12-02 19:16:26.956 | WARNING  | sam3d_objects.data.dataset.tdfy.preprocessor:__post_init__:51 - No rgb pointmap normalizer provided, using scale + shift 
+2025-12-02 19:16:26.957 | WARNING  | sam3d_objects.data.dataset.tdfy.preprocessor:__post_init__:51 - No rgb pointmap normalizer provided, using scale + shift 
+2025-12-02 19:16:26.973 | WARNING  | sam3d_objects.data.dataset.tdfy.preprocessor:__post_init__:51 - No rgb pointmap normalizer provided, using scale + shift 
+/home/ubuntu/miniconda3/envs/sam3d-objects/lib/python3.11/site-packages/moge/model/v1.py:171: UserWarning: The following deprecated/invalid arguments are ignored: {'output_mask': True, 'split_head': True}
+  warnings.warn(f"The following deprecated/invalid arguments are ignored: {deprecated_kwargs}")
+2025-12-02 19:16:30.066 | WARNING  | sam3d_objects.data.dataset.tdfy.preprocessor:__post_init__:51 - No rgb pointmap normalizer provided, using scale + shift 
+2025-12-02 19:16:30.067 | INFO     | sam3d_objects.pipeline.inference_pipeline:__init__:98 - self.device: cuda
+2025-12-02 19:16:30.067 | INFO     | sam3d_objects.pipeline.inference_pipeline:__init__:99 - CUDA_VISIBLE_DEVICES: None
+2025-12-02 19:16:30.067 | INFO     | sam3d_objects.pipeline.inference_pipeline:__init__:100 - Actually using GPU: 0
+2025-12-02 19:16:30.067 | INFO     | sam3d_objects.pipeline.inference_pipeline:init_pose_decoder:295 - Using pose decoder: ScaleShiftInvariant
+2025-12-02 19:16:30.067 | INFO     | sam3d_objects.pipeline.inference_pipeline:__init__:131 - Loading model weights...
+Warp 1.10.1 initialized:
+   CUDA Toolkit 12.8, Driver 12.8
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 5090" (31 GiB, sm_120, mempool enabled)
+     "cuda:1"   : "NVIDIA GeForce RTX 5090" (31 GiB, sm_120, mempool enabled)
+   CUDA peer access:
+     Not supported
+   Kernel cache:
+     /home/ubuntu/.cache/warp/1.10.1
+[SPARSE][CONV] spconv algo: auto
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/sam3d-objects/lib/python3.11/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 92, in _call_target
+    return _target_(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/sam-3d-objects/sam3d_objects/model/backbone/tdfy_dit/models/mm_latent.py", line 17, in __init__
+    self.input_layer = nn.Linear(in_channels, model_channels)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/envs/sam3d-objects/lib/python3.11/site-packages/torch/nn/modules/linear.py", line 112, in __init__
+    self.reset_parameters()
+  File "/home/ubuntu/miniconda3/envs/sam3d-objects/lib/python3.11/site-packages/torch/nn/modules/linear.py", line 118, in reset_parameters
+    init.kaiming_uniform_(self.weight, a=math.sqrt(5))
+  File "/home/ubuntu/miniconda3/envs/sam3d-objects/lib/python3.11/site-packages/torch/nn/init.py", line 500, in kaiming_uniform_
+    return torch.overrides.handle_torch_function(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/envs/sam3d-objects/lib/python3.11/site-packages/torch/overrides.py", line 1717, in handle_torch_function
+    result = mode.__torch_function__(public_api, types, args, kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/envs/sam3d-objects/lib/python3.11/site-packages/torch/utils/_device.py", line 106, in __torch_function__
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/envs/sam3d-objects/lib/python3.11/site-packages/torch/nn/init.py", line 518, in kaiming_uniform_
+    return tensor.uniform_(-bound, bound, generator=generator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: CUDA error: no kernel image is available for execution on the device
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/sam3d-objects/lib/python3.11/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 92, in _call_target
+    return _target_(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/sam-3d-objects/sam3d_objects/pipeline/inference_pipeline_pointmap.py", line 99, in __init__
+    super().__init__(*args, **kwargs)
+  File "/home/ubuntu/sam-3d-objects/sam3d_objects/pipeline/inference_pipeline.py", line 133, in __init__
+    ss_generator = self.init_ss_generator(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/sam-3d-objects/sam3d_objects/pipeline/inference_pipeline.py", line 313, in init_ss_generator
+    return self.instantiate_and_load_from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/sam-3d-objects/sam3d_objects/pipeline/inference_pipeline.py", line 269, in instantiate_and_load_from_pretrained
+    model = instantiate(config)
+            ^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/envs/sam3d-objects/lib/python3.11/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 226, in instantiate
+    return instantiate_node(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/envs/sam3d-objects/lib/python3.11/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 342, in instantiate_node
+    value = instantiate_node(
+            ^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/envs/sam3d-objects/lib/python3.11/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 342, in instantiate_node
+    value = instantiate_node(
+            ^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/envs/sam3d-objects/lib/python3.11/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 342, in instantiate_node
+    value = instantiate_node(
+            ^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/envs/sam3d-objects/lib/python3.11/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 366, in instantiate_node
+    cfg[key] = instantiate_node(
+               ^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/envs/sam3d-objects/lib/python3.11/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 347, in instantiate_node
+    return _call_target(_target_, partial, args, kwargs, full_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/envs/sam3d-objects/lib/python3.11/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 97, in _call_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error in call to target 'sam3d_objects.model.backbone.tdfy_dit.models.mm_latent.Latent':
+RuntimeError('CUDA error: no kernel image is available for execution on the device\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n')
+full_key: module.generator.backbone.reverse_fn.backbone.latent_mapping.6drotation_normalized
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/sam-3d-objects/demo.py", line 10, in <module>
+    inference = Inference(config_path, compile=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/sam-3d-objects/notebook/inference.py", line 92, in __init__
+    self._pipeline: InferencePipelinePointMap = instantiate(config)
+                                                ^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/envs/sam3d-objects/lib/python3.11/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 226, in instantiate
+    return instantiate_node(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/envs/sam3d-objects/lib/python3.11/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 347, in instantiate_node
+    return _call_target(_target_, partial, args, kwargs, full_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/envs/sam3d-objects/lib/python3.11/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 97, in _call_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error in call to target 'sam3d_objects.pipeline.inference_pipeline_pointmap.InferencePipelinePointMap':
+InstantiationException("Error in call to target 'sam3d_objects.model.backbone.tdfy_dit.models.mm_latent.Latent':\nRuntimeError('CUDA error: no kernel image is available for execution on the device\\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\\n')\nfull_key: module.generator.backbone.reverse_fn.backbone.latent_mapping.6drotation_normalized")

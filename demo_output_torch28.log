@@ -1,0 +1,14 @@
+/home/ubuntu/miniconda3/envs/sam3d-objects/lib/python3.11/site-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Traceback (most recent call last):
+  File "/home/ubuntu/sam-3d-objects/demo.py", line 5, in <module>
+    from inference import Inference, load_image, load_single_mask
+  File "/home/ubuntu/sam-3d-objects/notebook/inference.py", line 31, in <module>
+    from sam3d_objects.pipeline.inference_pipeline_pointmap import InferencePipelinePointMap
+  File "/home/ubuntu/sam-3d-objects/sam3d_objects/pipeline/inference_pipeline_pointmap.py", line 11, in <module>
+    from pytorch3d.renderer import look_at_view_transform
+  File "/home/ubuntu/miniconda3/envs/sam3d-objects/lib/python3.11/site-packages/pytorch3d/renderer/__init__.py", line 11, in <module>
+    from .blending import (
+  File "/home/ubuntu/miniconda3/envs/sam3d-objects/lib/python3.11/site-packages/pytorch3d/renderer/blending.py", line 12, in <module>
+    from pytorch3d import _C
+ImportError: /home/ubuntu/miniconda3/envs/sam3d-objects/lib/python3.11/site-packages/pytorch3d/_C.cpython-311-x86_64-linux-gnu.so: undefined symbol: _ZN3c1014DeviceTypeNameENS_10DeviceTypeEb

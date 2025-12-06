@@ -1,0 +1,20 @@
+/home/ubuntu/miniconda3/envs/sam3d-objects/lib/python3.11/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/home/ubuntu/miniconda3/envs/sam3d-objects/lib/python3.11/site-packages/torch/cuda/__init__.py:235: UserWarning: 
+NVIDIA GeForce RTX 5090 with CUDA capability sm_120 is not compatible with the current PyTorch installation.
+The current PyTorch install supports CUDA capabilities sm_50 sm_60 sm_70 sm_75 sm_80 sm_86 sm_90.
+If you want to use the NVIDIA GeForce RTX 5090 GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/
+
+  warnings.warn(
+2025-12-02 19:15:28.930 | INFO     | sam3d_objects.pipeline.inference_pipeline:set_attention_backend:15 - GPU name is NVIDIA GeForce RTX 5090
+2025-12-02 19:15:29.681 | INFO     | sam3d_objects.model.backbone.tdfy_dit.modules.sparse:__from_env:39 - [SPARSE] Backend: spconv, Attention: sdpa
+2025-12-02 19:15:31.822 | INFO     | sam3d_objects.model.backbone.tdfy_dit.modules.attention:__from_env:30 - [ATTENTION] Using backend: sdpa
+2025-12-02 19:15:31.982 | WARNING  | sam3d_objects.data.dataset.tdfy.preprocessor:__post_init__:51 - No rgb pointmap normalizer provided, using scale + shift 
+2025-12-02 19:15:31.982 | WARNING  | sam3d_objects.data.dataset.tdfy.preprocessor:__post_init__:51 - No rgb pointmap normalizer provided, using scale + shift 
+2025-12-02 19:15:31.998 | WARNING  | sam3d_objects.data.dataset.tdfy.preprocessor:__post_init__:51 - No rgb pointmap normalizer provided, using scale + shift 
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /Ruicheng/moge-vitl/resolve/main/model.pt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7cdcaefae610>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: a8a9f667-8076-48f5-83d4-fe23118beb26)')' thrown while requesting HEAD https://huggingface.co/Ruicheng/moge-vitl/resolve/main/model.pt
+Retrying in 1s [Retry 1/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /Ruicheng/moge-vitl/resolve/main/model.pt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7cdcae9a0b50>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 8e01bfff-f284-47d3-8ae3-742d2c9ec134)')' thrown while requesting HEAD https://huggingface.co/Ruicheng/moge-vitl/resolve/main/model.pt
+Retrying in 2s [Retry 2/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /Ruicheng/moge-vitl/resolve/main/model.pt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7cdcae9a1850>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 48f570a2-7c66-4c6e-85fb-cb259db13321)')' thrown while requesting HEAD https://huggingface.co/Ruicheng/moge-vitl/resolve/main/model.pt
+Retrying in 4s [Retry 3/5].
